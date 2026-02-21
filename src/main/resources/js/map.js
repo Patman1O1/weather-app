@@ -26,6 +26,15 @@ function initMap() {
             window.javaApp.onMapMove(lat, lng);
         }
     });
+
+    map.addListener("idle", function() {
+        const center = map.getCenter();
+        const lat = center.lat();
+        const lng = center.lng();
+        if (window.javaApp) {
+            window.javaApp.onMapIdle(lat, lng);
+        }
+    });
 }
 
 function addMarker(lat, lng, title) {
