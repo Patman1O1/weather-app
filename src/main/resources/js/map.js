@@ -13,8 +13,8 @@ function initMap() {
 
         addMarker(lat, lng);
 
-        if (window.javaApp) {
-            window.javaApp.onMapClick(lat, lng);
+        if (window.weatherApp) {
+            window.weatherApp.onMapClick(lat, lng);
         }
     });
 
@@ -22,8 +22,8 @@ function initMap() {
         const center = map.getCenter();
         const lat = center.lat();
         const lng = center.lng();
-        if (window.javaApp) {
-            window.javaApp.onMapMove(lat, lng);
+        if (window.weatherApp) {
+            window.weatherApp.onMapMove(lat, lng);
         }
     });
 
@@ -31,8 +31,8 @@ function initMap() {
         const center = map.getCenter();
         const lat = center.lat();
         const lng = center.lng();
-        if (window.javaApp) {
-            window.javaApp.onMapIdle(lat, lng);
+        if (window.weatherApp) {
+            window.weatherApp.onMapIdle(lat, lng);
         }
     });
 }
