@@ -1,4 +1,18 @@
 package edu.cs342.project2.controllers;
 
-public class ForecastController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ForecastController implements Initializable {
+    /* ---------------------------------------------------Fields----------------------------------------------------- */
+
+    /* ------------------------------------------------Constructors-------------------------------------------------- */
+
+    /* --------------------------------------------------Methods----------------------------------------------------- */
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
