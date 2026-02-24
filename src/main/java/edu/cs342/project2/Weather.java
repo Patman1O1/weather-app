@@ -290,13 +290,20 @@ public class Weather {
         this.dailyForecasts = new ArrayList<>(16);
         JSONObject dailyForecasts = data.getJSONObject("daily");
 
-
+        int numForecasts = dailyForecasts.getJSONArray("time").length();
+        for (int i = 0; i < numForecasts; i++) {
+            this.dailyForecasts.add(new DailyForecast(dailyForecasts, i));
+        }
     }
 
     private void setHourlyForecast(JSONObject data) {
         this.hourlyForecasts = new ArrayList<>(24);
-        JSONObject hourlyForecastData = data.getJSONObject("hourly");
+        JSONObject hourlyForecasts = data.getJSONObject("hourly");
 
+        int numForecasts = hourlyForecasts.getJSONArray("time").length();
+        for (int i = 0; i < numForecasts; i++) {
+            this.hourlyForecasts.add(new HourlyForecast(hourlyForecasts, i));
+        }
     }
 
     /* --------------------------------------------------Getters----------------------------------------------------- */
@@ -366,5 +373,7 @@ public class Weather {
         // Return the HTTP response as a JSON object
         return new JSONObject(client.send(request, HttpResponse.BodyHandlers.ofString()).body());
     }
+
+    public boolean isDay() { return this.isDay; }
 
 }
