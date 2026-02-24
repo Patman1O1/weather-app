@@ -225,17 +225,17 @@ public class Weather {
     /* ---------------------------------------------------Fields----------------------------------------------------- */
     private final Location location;
 
-    private double temperature,
-            dewPoint,
-            apparentTemperature,
-            precipitation,
-            windSpeed,
-            windDirection,
-            windGusts,
-            uvIndex,
-            visibility,
-            freezingLevel,
-            pressure;
+    private  double temperature,
+                    dewPoint,
+                    apparentTemperature,
+                    precipitation,
+                    windSpeed,
+                    windDirection,
+                    windGusts,
+                    uvIndex,
+                    visibility,
+                    freezingLevel,
+                    pressure;
 
     private int humidity, cloudCover;
 
@@ -253,16 +253,49 @@ public class Weather {
 
         JSONObject data = this.fetchData();
 
+        this.setCurrentForecast(data);
         this.setDailyForecasts(data);
         this.setHourlyForecast(data);
     }
 
     /* --------------------------------------------------Setters----------------------------------------------------- */
-    private void setDailyForecasts(JSONObject data) throws IOException, InterruptedException {
+    private void setCurrentForecast(JSONObject data) {
+        JSONObject currentForecast = data.getJSONObject("current");
+
+        // Set double fields
+        this.temperature = currentForecast.getDouble("temperature");
+        this.dewPoint = currentForecast.getDouble("dewpoint_2m");
+        this.apparentTemperature = currentForecast.getDouble("apparent_temperature");
+        this.precipitation = currentForecast.getDouble("precipitation");
+        this.windSpeed = currentForecast.getDouble("windspeed_10m");
+        this.windDirection = currentForecast.getDouble("winddirection_10m");
+        this.windGusts = currentForecast.getDouble("windgusts_10m");
+        this.uvIndex = currentForecast.getDouble("uv_index");
+        this.visibility = currentForecast.getDouble("visibility");
+        this.freezingLevel = currentForecast.getDouble("freezinglevel_height");
+        this.pressure = currentForecast.getDouble("surface_pressure");
+
+        // Set integer fields
+        this.humidity = currentForecast.getInt("relativehumidity_2m");
+        this.cloudCover = currentForecast.getInt("cloudcover");
+
+        // Set boolean fields
+        this.isDay = currentForecast.getInt("is_day") == 1;
+
+        // Set weather code
+        this.weatherCode = WeatherCode.get(currentForecast.getInt("weathercode"));
+    }
+
+    private void setDailyForecasts(JSONObject data) {
+        this.dailyForecasts = new ArrayList<>(16);
+        JSONObject dailyForecasts = data.getJSONObject("daily");
+
 
     }
 
-    private void setHourlyForecast(JSONObject data) throws IOException, InterruptedException {
+    private void setHourlyForecast(JSONObject data) {
+        this.hourlyForecasts = new ArrayList<>(24);
+        JSONObject hourlyForecastData = data.getJSONObject("hourly");
 
     }
 
