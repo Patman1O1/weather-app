@@ -14,11 +14,17 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
+import java.util.Objects;
+
 public class GoogleMapScene extends Scene {
     /* ----------------------------------------------------Fields---------------------------------------------------- */
     private static final String HTML_FILE = "/html/map.html";
 
     private WebView map;
+
+    private HBox coordinates;
+
+    private TextField latitudeField, longitudeField;
 
     private double latitude, longitude;
 
@@ -26,7 +32,16 @@ public class GoogleMapScene extends Scene {
     public GoogleMapScene() {
         super(new BorderPane(), 400.0, 300.0);
         this.longitude = this.latitude = 0.0;
+        //this.setCoordinates();
         this.setMap();
+
+        // resize map when window is resized
+        this.widthProperty().addListener((obs, oldVal, newVal) -> {
+            this.map.setPrefWidth(newVal.doubleValue());
+        });
+        this.heightProperty().addListener((obs, oldVal, newVal) -> {
+            this.map.setPrefHeight(newVal.doubleValue());
+        });
     }
 
     /* ---------------------------------------------------Setters---------------------------------------------------- */
@@ -37,17 +52,32 @@ public class GoogleMapScene extends Scene {
 
         webEngine.getLoadWorker().stateProperty().addListener((obs, oldState, newState) -> {
             if (newState == Worker.State.SUCCEEDED) {
-                System.out.println("Load worker succeeded");
                 JSObject window = (JSObject) webEngine.executeScript("window");
                 window.setMember("weatherApp", this); // exposes bridge as window.javaApp
-            } else if (newState == Worker.State.FAILED) {
-                System.out.println("Load worker failed");
+                Platform.runLater(() -> {
+                    webEngine.executeScript(
+                            "setTimeout(function() {" +
+                                    "   google.maps.event.trigger(map, 'resize');" +
+                                    "   map.setCenter({ lat: 40.7128, lng: -74.0060 });" +
+                                    "}, 300);"
+                    );
+                });
             }
         });
 
-        webEngine.load(getClass().getResource(HTML_FILE).toExternalForm());
+        webEngine.load(Objects.requireNonNull(getClass().getResource(HTML_FILE)).toExternalForm());
 
         ((BorderPane) this.getRoot()).setCenter(this.map);
+    }
+
+    private void setCoordinates() {
+        this.latitudeField = new TextField();
+        this.latitudeField.setEditable(false);
+        this.longitudeField = new TextField();
+        this.longitudeField.setEditable(false);
+        this.coordinates = new HBox(this.latitudeField, this.longitudeField);
+
+        ((BorderPane) this.getRoot()).setTop(this.coordinates);
     }
 
     /* ---------------------------------------------------Getters---------------------------------------------------- */
@@ -57,7 +87,11 @@ public class GoogleMapScene extends Scene {
 
     /* ---------------------------------------------------Methods---------------------------------------------------- */
     private void updateCoordinates(double latitude, double longitude) {
-        Platform.runLater(() -> { this.latitude = latitude; this.longitude = longitude; });
+        Platform.runLater(() -> {
+            this.latitude = latitude; this.longitude = longitude;
+            //this.latitudeField.setText(Double.toString(latitude));
+            //this.longitudeField.setText(Double.toString(longitude));
+        });
     }
 
     public void onMapClick(double latitude, double longitude) { this.updateCoordinates(latitude, longitude); }

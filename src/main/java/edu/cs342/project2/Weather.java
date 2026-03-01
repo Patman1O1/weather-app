@@ -133,7 +133,7 @@ public class Weather {
 
 
             // Set double fields
-            JSONArray temperatureArray = jsonObject.getJSONArray("temperature");
+            JSONArray temperatureArray = jsonObject.getJSONArray("temperature_2m");
             this.temperature = temperatureArray.isNull(index) ? 0.0 : temperatureArray.getDouble(index);
 
             JSONArray apparentTemperatureArray = jsonObject.getJSONArray("apparent_temperature");
@@ -225,17 +225,17 @@ public class Weather {
     /* ---------------------------------------------------Fields----------------------------------------------------- */
     private final Location location;
 
-    private  double temperature,
-                    dewPoint,
-                    apparentTemperature,
-                    precipitation,
-                    windSpeed,
-                    windDirection,
-                    windGusts,
-                    uvIndex,
-                    visibility,
-                    freezingLevel,
-                    pressure;
+    private double temperature,
+                   dewPoint,
+                   apparentTemperature,
+                   precipitation,
+                   windSpeed,
+                   windDirection,
+                   windGusts,
+                   uvIndex,
+                   visibility,
+                   freezingLevel,
+                   pressure;
 
     private int humidity, cloudCover;
 
@@ -263,7 +263,7 @@ public class Weather {
         JSONObject currentForecast = data.getJSONObject("current");
 
         // Set double fields
-        this.temperature = currentForecast.getDouble("temperature");
+        this.temperature = currentForecast.getDouble("temperature_2m");
         this.dewPoint = currentForecast.getDouble("dewpoint_2m");
         this.apparentTemperature = currentForecast.getDouble("apparent_temperature");
         this.precipitation = currentForecast.getDouble("precipitation");
