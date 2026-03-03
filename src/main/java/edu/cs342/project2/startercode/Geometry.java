@@ -1,4 +1,4 @@
-package edu.cs342.project2.weather;
+package edu.cs342.project2.api.nws;
 
 import java.util.ArrayList;
 
