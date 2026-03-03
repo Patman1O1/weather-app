@@ -9,11 +9,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 
-
 public class WeatherAPI {
-    public static ArrayList<Period> getForecast(String region, int gridx, int gridy) {
+    // ── Methods ──────────────────────────────────────────────────────────────────────────────────────────────────────
+    public static ArrayList<Period> getForecast(String region, int gridX, int gridY) {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.weather.gov/gridpoints/"+region+"/"+String.valueOf(gridx)+","+String.valueOf(gridy)+"/forecast"))
+                .uri(URI.create("https://api.weather.gov/gridpoints/"+region+"/"+String.valueOf(gridX)+","+String.valueOf(gridY)+"/forecast"))
                 .build();
         HttpResponse<String> response = null;
         try {
@@ -21,6 +21,7 @@ public class WeatherAPI {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        assert response != null;
         Root r = getObject(response.body());
         if(r == null){
             System.err.println("Failed to parse JSon");
@@ -28,7 +29,8 @@ public class WeatherAPI {
         }
         return r.properties.periods;
     }
-    public static Root getObject(String json){
+
+    public static Root getObject(String json) {
         ObjectMapper om = new ObjectMapper();
         Root toRet = null;
         try {
@@ -42,6 +44,3 @@ public class WeatherAPI {
 
     }
 }
-
-
-
