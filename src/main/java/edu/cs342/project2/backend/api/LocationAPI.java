@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GoogleAPI {
+public class LocationAPI {
     // ── Fields ───────────────────────────────────────────────────────────────────────────────────────────────────────
     private static final String KEY = "AIzaSyAXOFEgdWxFrqUpztN3vBl1gI-T1mpXVGk";
 
@@ -20,7 +20,7 @@ public class GoogleAPI {
 
     // ── Methods ──────────────────────────────────────────────────────────────────────────────────────────────────────
     public static ArrayList<Double> geolocationRequest() throws IOException, InterruptedException {
-        String url = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + GoogleAPI.KEY;
+        String url = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + LocationAPI.KEY;
         // Send POST request (Google Geolocation requires POST)
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -28,7 +28,7 @@ public class GoogleAPI {
                 .POST(HttpRequest.BodyPublishers.ofString("{}")) // empty body is valid
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JsonNode locationNode = GoogleAPI.OBJECT_MAPPER.readTree(response.body()).path("location");
+        JsonNode locationNode = LocationAPI.OBJECT_MAPPER.readTree(response.body()).path("location");
 
         ArrayList<Double> coordinates = new ArrayList<>();
         coordinates.add(locationNode.hasNonNull("lat") ? locationNode.path("lat").asDouble() : 0.0);
@@ -40,7 +40,7 @@ public class GoogleAPI {
     public static Map<String, String> geocodeRequest(double latitude, double longitude)
             throws RuntimeException, IOException, InterruptedException {
         String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
-                + latitude + "," + longitude + "&key=" + GoogleAPI.KEY;
+                + latitude + "," + longitude + "&key=" + LocationAPI.KEY;
 
         HttpRequest request = HttpRequest.newBuilder()
                 .header("Content-Type", "application/json")
@@ -49,7 +49,7 @@ public class GoogleAPI {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
-        JsonNode rootNode = GoogleAPI.OBJECT_MAPPER.readTree(response.body());
+        JsonNode rootNode = LocationAPI.OBJECT_MAPPER.readTree(response.body());
 
         // Check if the request was successfully fulfilled
         String status = rootNode.path("status").asText();
