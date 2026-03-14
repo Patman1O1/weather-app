@@ -54,8 +54,10 @@ public final class StageManager {
 
     private Map<SceneType, Scene> scenes;
 
+    private SceneType currentScene;
+
     // ── Constructors ─────────────────────────────────────────────────────────────────────────────────────────────────
-    private StageManager() { this.stage = null; this.scenes = null; }
+    private StageManager() { this.stage = null; this.scenes = null; this.currentScene = null; }
 
     // ── Getters ──────────────────────────────────────────────────────────────────────────────────────────────────────
     public static StageManager getInstance() {
@@ -64,6 +66,8 @@ public final class StageManager {
         }
         return StageManager.instance;
     }
+
+    public SceneType getCurrentScene() { return this.currentScene; }
 
     // ── Methods ──────────────────────────────────────────────────────────────────────────────────────────────────────
     private Scene loadScene(String fxmlPath) throws IOException {
@@ -97,6 +101,10 @@ public final class StageManager {
         this.scenes.put(SceneType.MAP, this.loadScene(StageManager.MAP_FXML_PATH));
         this.scenes.put(SceneType.SETTINGS, this.loadScene(StageManager.SETTINGS_FXML_PATH));
 
+        // Set the current scene to the Current Weather Scene
+        this.stage.setScene(this.scenes.get(SceneType.CURRENT_WEATHER));
+        this.currentScene = SceneType.CURRENT_WEATHER;
+
         // Show the stage
         this.stage.show();
     }
@@ -111,7 +119,8 @@ public final class StageManager {
             throw new IllegalStateException("stage has not been loaded");
         }
 
-        // Set the scene
+        // Switch the scene
         this.stage.setScene(this.scenes.get(sceneType));
+        this.currentScene = sceneType;
     }
 }
