@@ -12,7 +12,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public final class StageManager {
-    // ── Scenes ───────────────────────────────────────────────────────────────────────────────────────────────────────
+    // ── SceneType ────────────────────────────────────────────────────────────────────────────────────────────────────
     public static enum SceneType {
         // ── Constants ────────────────────────────────────────────────────────────────────────────────────────────────
         CURRENT_WEATHER,
@@ -58,7 +58,12 @@ public final class StageManager {
     private StageManager() { this.stage = null; this.scenes = null; }
 
     // ── Getters ──────────────────────────────────────────────────────────────────────────────────────────────────────
-    public static StageManager getInstance() { return StageManager.instance; }
+    public static StageManager getInstance() {
+        if (StageManager.instance == null) {
+            StageManager.instance = new StageManager();
+        }
+        return StageManager.instance;
+    }
 
     // ── Methods ──────────────────────────────────────────────────────────────────────────────────────────────────────
     private Scene loadScene(String fxmlPath) throws IOException {
@@ -94,5 +99,19 @@ public final class StageManager {
 
         // Show the stage
         this.stage.show();
+    }
+
+    public void switchScene(SceneType sceneType) throws NullPointerException, IllegalStateException {
+        if (sceneType == null) {
+            throw new NullPointerException("sceneType is null");
+        }
+
+        // Make sure the stage has been loaded (i.e. StageManager::load has been called)
+        if (this.stage == null) {
+            throw new IllegalStateException("stage has not been loaded");
+        }
+
+        // Set the scene
+        this.stage.setScene(this.scenes.get(sceneType));
     }
 }
