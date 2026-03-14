@@ -5,6 +5,7 @@
 
 /* ── Button ──────────────────────────────────────────────────────────────────────────────────────────────────────── */
 .button {
+    -fx-font-family: "Open Sans";
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-border-radius: 6px;
