@@ -1,4 +1,4 @@
-package edu.cs342.project2.api.nws;
+package edu.cs342.project2.startercode;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

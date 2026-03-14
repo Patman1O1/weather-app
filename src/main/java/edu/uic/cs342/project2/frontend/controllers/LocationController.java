@@ -1,4 +1,4 @@
-package edu.cs342.project2.controllers;
+package edu.cs342.project2.frontend.controllers;
 
 import javafx.fxml.Initializable;
 

@@ -1,4 +1,4 @@
-package edu.cs342.project2.api.nws;
+package edu.cs342.project2.startercode;
 
 import java.util.ArrayList;
 

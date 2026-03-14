@@ -1,11 +1,11 @@
-package edu.cs342.project2.controllers;
+package edu.cs342.project2.frontend.controllers;
 
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable {
+public class ForecastController implements Initializable {
     /* ---------------------------------------------------Fields----------------------------------------------------- */
 
     /* ------------------------------------------------Constructors-------------------------------------------------- */
