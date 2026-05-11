@@ -7,7 +7,7 @@ public class Theme {
     private final String name, stylesheet, iconPath;
 
     // ── Constructors ─────────────────────────────────────────────────────────────────────────────────────────────────
-    public Theme(String name, String stylesheet, String iconPath) {
+    protected Theme(String name, String stylesheet, String iconPath) {
         this.name = name;
         this.stylesheet = stylesheet;
         this.iconPath = iconPath;
