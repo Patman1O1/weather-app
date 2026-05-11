@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.NavigationController"
+      styleClass="navigation"
+      spacing="4"
+      alignment="CENTER"
+      maxWidth="Infinity"
+      fillHeight="false">
+
+    <ToggleButton fx:id="currentWeatherButton"
+                  text="Current"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation">
+
+    </ToggleButton>
+
+    <ToggleButton fx:id="hourlyForecastButton"
+                  text="Hourly"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation"/>
+
+    <ToggleButton fx:id="dailyForecastButton"
+                  text="5-Day"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation"/>
+
+    <ToggleButton fx:id="mapButton"
+                  text="Map"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation"/>
+
+    <ToggleButton fx:id="locationsButton"
+                  text="Locations"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation"/>
+
+    <ToggleButton fx:id="settingsButton"
+                  text="Settings"
+                  styleClass="nav-button"
+                  onAction="#handleNavigation"/>
+
+</HBox>

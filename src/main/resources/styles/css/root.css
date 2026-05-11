@@ -1,0 +1,38 @@
+@font-face {
+    src: url("/styles/fonts/open-sans/OpenSans-Regular.ttf");
+}
+
+.root {
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 14px;
+}
+.root-layout {
+    -fx-background-color: -color-bg-subtle;
+    -fx-fill-width: true;
+}
+
+.root-container {
+    -fx-max-width: 1152;
+    -fx-fill-width: true;
+    -fx-spacing: 24;
+}
+
+.root-outlet {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane,
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .track,
+.scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

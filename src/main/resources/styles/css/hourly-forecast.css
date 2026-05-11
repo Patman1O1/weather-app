@@ -1,0 +1,17 @@
+.hour-card {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 14;
+    -fx-padding: 14 10;
+    -fx-min-width: 76;
+    -fx-cursor: hand;
+}
+
+.hour-card:hover {
+    -fx-background-color: -color-neutral-subtle;
+}
+
+.hour-temp {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-fg-default;
+}

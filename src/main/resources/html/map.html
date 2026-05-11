@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/css/map.css">
+</head>
+<body data-theme="dark">
+
+<div id="topbar">
+    <div id="search-wrapper">
+        <span class="search-icon">⌕</span>
+        <input
+                type="text"
+                id="search-input"
+                placeholder="Search location…"
+                autocomplete="off"
+                spellcheck="false"
+        />
+        <div id="search-clear" title="Clear">✕</div>
+        <div id="search-dropdown"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="layer-btns"></div>
+
+    <div class="divider"></div>
+
+    <div id="controls">
+        <div class="unit-toggle">
+            <button class="unit-btn active" data-unit="metric" onclick="setUnit('metric')">°C</button>
+            <button class="unit-btn" data-unit="imperial" onclick="setUnit('imperial')">°F</button>
+        </div>
+        <button class="ctrl-btn" id="theme-btn" title="Toggle theme" onclick="toggleTheme()">☾</button>
+        <button class="ctrl-btn" id="loc-btn" title="My location" onclick="goToLocation()">⊕</button>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<div class="weather-popup" id="weather-popup">
+    <div class="popup-close" onclick="closePopup()">✕</div>
+    <div id="popup-content"></div>
+</div>
+
+<div id="legend">
+    <div class="legend-title" id="legend-title">Temperature</div>
+    <div class="legend-bar" id="legend-bar"></div>
+    <div class="legend-labels" id="legend-labels"></div>
+</div>
+
+<div id="status">
+    <div class="pulse"></div>
+    <span id="status-text">Click map for weather</span>
+</div>
+
+<div class="click-hint" id="click-hint">Click anywhere on the map</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="../js/map.js"></script>
+</body>
+</html>

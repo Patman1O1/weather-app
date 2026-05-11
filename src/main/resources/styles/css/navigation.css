@@ -1,0 +1,26 @@
+.navigation {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.08), 8, 0, 0, 2);
+    -fx-max-width: infinity;
+}
+
+.nav-button {
+    -fx-padding: 9 18;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-cursor: hand;
+    -fx-max-width: infinity;
+}
+
+.nav-button:selected {
+     -fx-background-color: -color-accent-emphasis;
+     -fx-text-fill: white;
+     -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.35), 8, 0, 0, 2);
+ }
+
+.nav-button:hover:!selected {
+    -fx-background-color: -color-bg-subtle;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.LocationController"
+      spacing="24">
+
+    <VBox styleClass="weather-card" spacing="16">
+
+        <HBox alignment="CENTER_LEFT">
+            <VBox>
+                <Label text="Current Location: " styleClass="section-title"/>
+                <Label fx:id="currentLocationLabel" styleClass="section-title"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox fx:id="searchRow"
+              styleClass="search-row"
+              alignment="CENTER_LEFT"
+              spacing="8"
+              maxWidth="Infinity">
+            <padding>
+                <Insets top="10" right="16" bottom="10" left="16"/>
+            </padding>
+            <Label text="🔍" style="-fx-font-size:14;"/>
+            <TextField fx:id="searchInput"
+                       promptText="Search for a location..."
+                       HBox.hgrow="ALWAYS"
+                       styleClass="search-input"/>
+            <Label fx:id="statusLabel" visible="false" styleClass="text-muted"/>
+        </HBox>
+    </VBox>
+</VBox>

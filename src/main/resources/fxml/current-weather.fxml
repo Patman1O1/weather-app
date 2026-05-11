@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.CurrentWeatherController"
+      styleClass="weather-card"
+      spacing="20">
+
+    <HBox alignment="CENTER_LEFT">
+        <VBox spacing="2">
+            <Label fx:id="localityLabel" styleClass="city-name"/>
+            <Label fx:id="countryLabel" styleClass="subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <VBox spacing="2" alignment="CENTER_RIGHT">
+            <Label fx:id="dateLabel" styleClass="subtitle"/>
+            <Label fx:id="timeLabel" styleClass="time-label"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="24">
+
+        <!-- Icon -->
+        <ImageView fx:id="iconView" fitHeight="96" fitWidth="96" preserveRatio="true"/>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <Label fx:id="temperatureLabel" styleClass="temp-large"/>
+            <Label fx:id="conditionLabel" styleClass="condition-label"/>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label fx:id="highLabel" styleClass="high-label"/>
+                <Label text="·" styleClass="subtitle"/>
+                <Label fx:id="lowLabel" styleClass="low-label"/>
+            </HBox>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <VBox spacing="12" alignment="CENTER_RIGHT">
+            <VBox spacing="2" alignment="CENTER_RIGHT">
+                <Label text="Feels Like" styleClass="stat-label"/>
+                <Label fx:id="feelsLikeLabel" styleClass="temp-medium"/>
+            </VBox>
+            <VBox spacing="2" alignment="CENTER_RIGHT">
+                <Label text="Visibility" styleClass="stat-label"/>
+                <Label fx:id="visibilityLabel" styleClass="temp-medium"/>
+            </VBox>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="8" styleClass="stats-container">
+        <padding>
+            <Insets top="4" right="4" bottom="4" left="4"/>
+        </padding>
+
+        <VBox styleClass="stat-group">
+            <Label text="WIND" styleClass="stat-group-title"/>
+            <HBox>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Speed" styleClass="stat-label"/>
+                    <Label fx:id="windSpeedLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Direction" styleClass="stat-label"/>
+                    <Label fx:id="windDirectionLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Wind Chill" styleClass="stat-label"/>
+                    <Label fx:id="windChillLabel" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <Region styleClass="stat-group-divider"/>
+
+        <VBox styleClass="stat-group">
+            <Label text="ATMOSPHERE" styleClass="stat-group-title"/>
+            <HBox>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Humidity" styleClass="stat-label"/>
+                    <Label fx:id="humidityLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Dew Point" styleClass="stat-label"/>
+                    <Label fx:id="dewPointLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Air Pressure" styleClass="stat-label"/>
+                    <Label fx:id="airPressureLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="UV Index" styleClass="stat-label"/>
+                    <Label fx:id="uvIndexLabel" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <Region styleClass="stat-group-divider"/>
+
+        <VBox styleClass="stat-group">
+            <Label text="PRECIPITATION" styleClass="stat-group-title"/>
+            <HBox>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Cloud Cover"   styleClass="stat-label"/>
+                    <Label fx:id="cloudCoverLabel"  styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Quantity" styleClass="stat-label"/>
+                    <Label fx:id="precipQuantLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Probability" styleClass="stat-label"/>
+                    <Label fx:id="precipProbLabel" styleClass="stat-value"/>
+                </VBox>
+                <Region styleClass="stat-divider"/>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
+                    <Label text="Thunderstorm" styleClass="stat-label"/>
+                    <Label fx:id="tstormProbLabel" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</VBox>

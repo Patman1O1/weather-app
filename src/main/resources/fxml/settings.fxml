@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.SettingsController"
+      styleClass="weather-card"
+      spacing="24.0">
+
+    <Label text="Settings" styleClass="section-title"/>
+
+    <!-- Theme row -->
+    <HBox fx:id="themeRow"
+          styleClass="settings-row"
+          alignment="CENTER_LEFT"
+          maxWidth="Infinity">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+
+        <ImageView fx:id="themeIconView"/>
+
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets left="16.0"/>
+            </HBox.margin>
+            <Label text="Theme"      styleClass="settings-row-title"/>
+            <Label fx:id="themeDesc" styleClass="subtitle"/>
+        </VBox>
+
+        <!-- ControlsFX ToggleSwitch injected programmatically into this container -->
+        <HBox fx:id="themeToggleContainer"
+              spacing="12.0"
+              alignment="CENTER_RIGHT">
+            <Label text="Light" styleClass="subtitle"/>
+            <!-- ToggleSwitch added in controller initialize() -->
+            <Label text="Dark"  styleClass="subtitle"/>
+        </HBox>
+    </HBox>
+
+    <!-- UnitSystem row -->
+    <HBox fx:id="unitSystemRow"
+          styleClass="settings-row"
+          alignment="CENTER_LEFT"
+          maxWidth="Infinity">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+
+        <ImageView>
+            <Image url="/styles/icons/settings/thermometer.png"/>
+        </ImageView>
+
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets left="16.0"/>
+            </HBox.margin>
+            <Label text="Units" styleClass="settings-row-title"/>
+            <Label fx:id="unitSystemDesc" styleClass="subtitle"/>
+        </VBox>
+
+        <HBox fx:id="unitSystemToggleContainer"
+              spacing="12.0"
+              alignment="CENTER_RIGHT">
+            <Label text="Metric"   styleClass="subtitle"/>
+            <!-- ToggleSwitch added in controller initialize() -->
+            <Label text="Imperial" styleClass="subtitle"/>
+        </HBox>
+    </HBox>
+
+    <!-- Info box -->
+    <VBox styleClass="settings-info-box" spacing="10.0">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+        <Label text="About Settings" styleClass="settings-info-title"/>
+        <Label text="• Theme: Choose between light and dark mode for comfortable viewing"
+               styleClass="subtitle" wrapText="true"/>
+        <Label text="• Units: Switch between metric (°C, km/h) and imperial (°F, mph)"
+               styleClass="subtitle" wrapText="true"/>
+        <Label text="• Your preferences are saved automatically"
+               styleClass="subtitle" wrapText="true"/>
+    </VBox>
+</VBox>

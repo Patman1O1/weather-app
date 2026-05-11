@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.DailyForecastController"
+      styleClass="weather-card"
+      spacing="16">
+
+    <Label text="5-Day Forecast" styleClass="section-title"/>
+
+    <VBox fx:id="forecastContainer" spacing="4"/>
+</VBox>

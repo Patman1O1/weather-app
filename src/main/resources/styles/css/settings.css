@@ -1,0 +1,43 @@
+.settings-row {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 14;
+    -fx-max-width: infinity;
+    -fx-cursor: default;
+}
+
+.settings-row:hover {
+    -fx-background-color: -color-neutral-subtle;
+}
+
+.settings-row-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-fg-default;
+}
+
+.settings-info-box {
+    -fx-background-color: -color-accent-subtle;
+    -fx-border-color: -color-accent-muted;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+}
+
+.settings-info-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-accent-fg;
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 1);
+}
+
+.toggle-switch:selected .main-button {
+    -fx-background-color: -color-accent-emphasis;
+}
+
+.toggle-switch:!selected .main-button {
+    -fx-background-color: -color-border-default;
+}

@@ -1,0 +1,18 @@
+.day-row {
+    -fx-padding: 12 4;
+    -fx-border-color: transparent transparent -color-border-muted transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
+}
+
+.day-row:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8;
+}
+
+.day-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-fg-default;
+    -fx-min-width: 120;
+}

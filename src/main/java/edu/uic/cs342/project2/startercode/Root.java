@@ -1,0 +1,10 @@
+package edu.uic.cs342.project2.startercode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Root{
+    public String type;
+    public Geometry geometry;
+    public Properties properties;
+}

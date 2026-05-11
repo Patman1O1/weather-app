@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uic.cs342.project2.frontend.controllers.RootController"
+      styleClass="root-layout"
+      alignment="TOP_CENTER"
+      VBox.vgrow="ALWAYS">
+
+    <VBox fx:id="container"
+          styleClass="root-container"
+          spacing="24"
+          VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="32" right="24" bottom="32" left="24"/>
+        </padding>
+
+        <fx:include fx:id="nav" source="/fxml/navigation.fxml"/>
+
+        <StackPane fx:id="outlet"
+                   styleClass="root-outlet"
+                   alignment="TOP_LEFT"
+                   VBox.vgrow="ALWAYS"/>
+    </VBox>
+</VBox>
