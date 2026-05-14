@@ -4,7 +4,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="edu.uic.cs342.project2.frontend.controllers.DailyForecastController"
+      fx:controller="org.patman101.weather_app.frontend.controllers.DailyForecastController"
       styleClass="weather-card"
       spacing="16">
 
