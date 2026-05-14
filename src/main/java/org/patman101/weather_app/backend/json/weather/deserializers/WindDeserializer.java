@@ -1,12 +1,12 @@
-package edu.uic.cs342.project2.backend.json.weather.deserializers;
+package org.patman101.weather_app.backend.json.weather.deserializers;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import edu.uic.cs342.project2.backend.Utilities;
-import edu.uic.cs342.project2.backend.json.weather.objects.Wind;
-import edu.uic.cs342.project2.frontend.ui.measurements.UnitSystem;
+import org.patman101.weather_app.backend.Utilities;
+import org.patman101.weather_app.backend.json.weather.objects.Wind;
+import org.patman101.weather_app.frontend.ui.measurements.UnitSystem;
 
 import java.io.IOException;
 

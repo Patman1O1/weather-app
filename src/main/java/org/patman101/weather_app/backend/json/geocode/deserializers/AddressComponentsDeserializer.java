@@ -1,10 +1,10 @@
-package edu.uic.cs342.project2.backend.json.geocode.deserializers;
+package org.patman101.weather_app.backend.json.geocode.deserializers;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import edu.uic.cs342.project2.backend.json.geocode.objects.AddressComponents;
+import org.patman101.weather_app.backend.json.geocode.objects.AddressComponents;
 
 import java.io.IOException;
 import java.util.ArrayList;

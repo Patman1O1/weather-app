@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.backend.api;
+package org.patman101.weather_app.backend.api;
 
 import java.io.IOException;
 import java.net.URI;

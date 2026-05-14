@@ -1,6 +1,6 @@
-package edu.uic.cs342.project2.backend;
+package org.patman101.weather_app.backend;
 
-import edu.uic.cs342.project2.backend.json.weather.objects.Wind;
+import org.patman101.weather_app.backend.json.weather.objects.Wind;
 
 import java.util.HashMap;
 import java.util.Map;

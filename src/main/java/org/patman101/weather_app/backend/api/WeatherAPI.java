@@ -1,11 +1,11 @@
-package edu.uic.cs342.project2.backend.api;
+package org.patman101.weather_app.backend.api;
 
 import com.fasterxml.jackson.databind.InjectableValues;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.uic.cs342.project2.backend.json.weather.objects.CurrentConditions;
-import edu.uic.cs342.project2.backend.json.weather.objects.DailyForecasts;
-import edu.uic.cs342.project2.backend.json.weather.objects.HourlyForecasts;
-import edu.uic.cs342.project2.frontend.ui.measurements.UnitSystem;
+import org.patman101.weather_app.backend.json.weather.objects.CurrentConditions;
+import org.patman101.weather_app.backend.json.weather.objects.DailyForecasts;
+import org.patman101.weather_app.backend.json.weather.objects.HourlyForecasts;
+import org.patman101.weather_app.frontend.ui.measurements.UnitSystem;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;

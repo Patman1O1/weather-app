@@ -1,8 +1,8 @@
-package edu.uic.cs342.project2.backend.json.weather.objects;
+package org.patman101.weather_app.backend.json.weather.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import edu.uic.cs342.project2.backend.json.weather.deserializers.CurrentConditionsDeserializer;
+import org.patman101.weather_app.backend.json.weather.deserializers.CurrentConditionsDeserializer;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;

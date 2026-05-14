@@ -1,9 +1,9 @@
-package edu.uic.cs342.project2.backend.json.geocode.objects;
+package org.patman101.weather_app.backend.json.geocode.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import edu.uic.cs342.project2.backend.Utilities;
-import edu.uic.cs342.project2.backend.json.geocode.deserializers.LocationDeserializer;
+import org.patman101.weather_app.backend.Utilities;
+import org.patman101.weather_app.backend.json.geocode.deserializers.LocationDeserializer;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonDeserialize(using = LocationDeserializer.class)

@@ -1,8 +1,8 @@
-package edu.uic.cs342.project2.backend.api;
+package org.patman101.weather_app.backend.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.uic.cs342.project2.backend.json.geolocation.objects.Coordinates;
+import org.patman101.weather_app.backend.json.geolocation.objects.Coordinates;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;

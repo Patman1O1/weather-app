@@ -1,11 +1,11 @@
-package edu.uic.cs342.project2.backend.json.weather.objects;
+package org.patman101.weather_app.backend.json.weather.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import edu.uic.cs342.project2.backend.Utilities;
-import edu.uic.cs342.project2.backend.json.weather.deserializers.PrecipitationDeserializer;
-import edu.uic.cs342.project2.frontend.ui.measurements.Measurement;
-import edu.uic.cs342.project2.frontend.ui.measurements.Unit;
+import org.patman101.weather_app.backend.Utilities;
+import org.patman101.weather_app.backend.json.weather.deserializers.PrecipitationDeserializer;
+import org.patman101.weather_app.frontend.ui.measurements.Measurement;
+import org.patman101.weather_app.frontend.ui.measurements.Unit;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonDeserialize(using = PrecipitationDeserializer.class)

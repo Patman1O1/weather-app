@@ -1,7 +1,7 @@
-package edu.uic.cs342.project2.backend.api;
+package org.patman101.weather_app.backend.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.uic.cs342.project2.backend.json.geocode.objects.Location;
+import org.patman101.weather_app.backend.json.geocode.objects.Location;
 
 import java.io.IOException;
 import java.net.URLEncoder;
