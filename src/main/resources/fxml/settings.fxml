@@ -7,7 +7,7 @@
 <?import javafx.scene.image.Image?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="edu.uic.cs342.project2.frontend.controllers.SettingsController"
+      fx:controller="org.patman101.weather_app.frontend.controllers.SettingsController"
       styleClass="weather-card"
       spacing="24.0">
 
