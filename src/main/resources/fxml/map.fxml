@@ -6,7 +6,7 @@
 <?import javafx.scene.web.WebView?>
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.uic.cs342.project2.frontend.controllers.MapController"
+            fx:controller="org.patman101.weather_app.frontend.controllers.MapController"
             styleClass="map-pane">
 
     <WebView fx:id="mapView" prefHeight="500.0" prefWidth="700.0"/>
