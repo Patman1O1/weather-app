@@ -1,13 +1,13 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
 import animatefx.animation.FadeInUp;
 
 import atlantafx.base.theme.Styles;
 
-import edu.uic.cs342.project2.backend.api.WeatherAPI;
-import edu.uic.cs342.project2.backend.json.geolocation.objects.Coordinates;
-import edu.uic.cs342.project2.backend.json.weather.objects.HourlyForecasts;
-import edu.uic.cs342.project2.frontend.ui.UserLocation;
+import org.patman101.weather_app.backend.api.WeatherAPI;
+import org.patman101.weather_app.backend.json.geolocation.objects.Coordinates;
+import org.patman101.weather_app.backend.json.weather.objects.HourlyForecasts;
+import org.patman101.weather_app.frontend.ui.UserLocation;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;

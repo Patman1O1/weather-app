@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.frontend.ui.measurements;
+package org.patman101.weather_app.frontend.ui.measurements;
 
 public final class UnitSystems {
     // ── Fields ───────────────────────────────────────────────────────────────────────────────────────────────────────

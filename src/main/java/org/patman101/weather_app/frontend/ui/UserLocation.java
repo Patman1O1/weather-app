@@ -1,9 +1,9 @@
-package edu.uic.cs342.project2.frontend.ui;
+package org.patman101.weather_app.frontend.ui;
 
-import edu.uic.cs342.project2.backend.api.GeocodeAPI;
-import edu.uic.cs342.project2.backend.api.GeolocationAPI;
-import edu.uic.cs342.project2.backend.json.geocode.objects.Location;
-import edu.uic.cs342.project2.backend.json.geolocation.objects.Coordinates;
+import org.patman101.weather_app.backend.api.GeocodeAPI;
+import org.patman101.weather_app.backend.api.GeolocationAPI;
+import org.patman101.weather_app.backend.json.geocode.objects.Location;
+import org.patman101.weather_app.backend.json.geolocation.objects.Coordinates;
 
 import java.io.IOException;
 import java.net.ConnectException;

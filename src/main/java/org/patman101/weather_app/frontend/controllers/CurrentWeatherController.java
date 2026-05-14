@@ -1,12 +1,12 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
-import edu.uic.cs342.project2.backend.api.WeatherAPI;
-import edu.uic.cs342.project2.backend.json.geocode.objects.AddressComponents;
-import edu.uic.cs342.project2.backend.json.geocode.objects.Location;
-import edu.uic.cs342.project2.backend.json.geolocation.objects.Coordinates;
-import edu.uic.cs342.project2.backend.json.weather.objects.*;
-import edu.uic.cs342.project2.frontend.ui.UserLocation;
-import edu.uic.cs342.project2.frontend.ui.measurements.UnitSystem;
+import org.patman101.weather_app.backend.api.WeatherAPI;
+import org.patman101.weather_app.backend.json.geocode.objects.AddressComponents;
+import org.patman101.weather_app.backend.json.geocode.objects.Location;
+import org.patman101.weather_app.backend.json.geolocation.objects.Coordinates;
+import org.patman101.weather_app.backend.json.weather.objects.*;
+import org.patman101.weather_app.frontend.ui.UserLocation;
+import org.patman101.weather_app.frontend.ui.measurements.UnitSystem;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

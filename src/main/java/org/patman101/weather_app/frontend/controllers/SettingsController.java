@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
 import animatefx.animation.FadeIn;
 
@@ -9,11 +9,11 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.uic.cs342.project2.backend.Utilities;
-import edu.uic.cs342.project2.frontend.ui.measurements.UnitSystem;
-import edu.uic.cs342.project2.frontend.ui.measurements.UnitSystems;
-import edu.uic.cs342.project2.frontend.ui.themes.Theme;
-import edu.uic.cs342.project2.frontend.ui.themes.Themes;
+import org.patman101.weather_app.backend.Utilities;
+import org.patman101.weather_app.frontend.ui.measurements.UnitSystem;
+import org.patman101.weather_app.frontend.ui.measurements.UnitSystems;
+import org.patman101.weather_app.frontend.ui.themes.Theme;
+import org.patman101.weather_app.frontend.ui.themes.Themes;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

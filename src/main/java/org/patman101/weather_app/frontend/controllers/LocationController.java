@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
 import atlantafx.base.theme.Styles;
 
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-import edu.uic.cs342.project2.frontend.ui.UserLocation;
+import org.patman101.weather_app.frontend.ui.UserLocation;
 import javafx.animation.PauseTransition;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;

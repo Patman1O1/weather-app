@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.frontend.ui.themes;
+package org.patman101.weather_app.frontend.ui.themes;
 
 import javafx.application.Application;
 

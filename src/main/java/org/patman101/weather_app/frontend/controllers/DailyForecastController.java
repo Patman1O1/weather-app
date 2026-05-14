@@ -1,17 +1,17 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
 import animatefx.animation.FadeInLeft;
 import animatefx.animation.FadeIn;
 
 import atlantafx.base.theme.Styles;
 
-import edu.uic.cs342.project2.backend.api.WeatherAPI;
-import edu.uic.cs342.project2.backend.json.geolocation.objects.Coordinates;
-import edu.uic.cs342.project2.backend.json.weather.objects.DailyForecasts;
-import edu.uic.cs342.project2.backend.json.weather.objects.Precipitation;
-import edu.uic.cs342.project2.backend.json.weather.objects.Temperature;
-import edu.uic.cs342.project2.backend.json.weather.objects.Wind;
-import edu.uic.cs342.project2.frontend.ui.UserLocation;
+import org.patman101.weather_app.backend.api.WeatherAPI;
+import org.patman101.weather_app.backend.json.geolocation.objects.Coordinates;
+import org.patman101.weather_app.backend.json.weather.objects.DailyForecasts;
+import org.patman101.weather_app.backend.json.weather.objects.Precipitation;
+import org.patman101.weather_app.backend.json.weather.objects.Temperature;
+import org.patman101.weather_app.backend.json.weather.objects.Wind;
+import org.patman101.weather_app.frontend.ui.UserLocation;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
@@ -24,6 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Popup;
 import javafx.util.Duration;
+
 import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;

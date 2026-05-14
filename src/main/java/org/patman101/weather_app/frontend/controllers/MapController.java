@@ -1,4 +1,4 @@
-package edu.uic.cs342.project2.frontend.controllers;
+package org.patman101.weather_app.frontend.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.web.WebView;

@@ -1,9 +1,9 @@
-package edu.uic.cs342.project2.frontend;
+package org.patman101.weather_app.frontend;
 
 import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;
-import edu.uic.cs342.project2.frontend.controllers.SettingsController;
-import edu.uic.cs342.project2.frontend.ui.themes.Themes;
+import org.patman101.weather_app.frontend.controllers.SettingsController;
+import org.patman101.weather_app.frontend.ui.themes.Themes;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
